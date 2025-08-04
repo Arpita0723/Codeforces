@@ -1,0 +1,39 @@
+#include <iostream>
+#include <vector>
+#include<algorithm>
+using namespace std;
+
+int main() {
+    long long t;
+    cin>>t;
+    while(t--){
+     long long n;
+     cin>>n;
+     if(n==1){cout<<0<<endl;
+    continue;}
+     int c=0;
+     bool found=false;
+     while(n!=1){
+    if(n%3==0 && n%2!=0){
+            n*=2;
+            n=n/6;
+            c+=2;
+    }
+    while(n%6==0){
+           n=n/6;
+           c++;
+       }
+     if(n==1){
+        found=true;
+        break;
+     }
+    if(n%2==0 && n%3!=0){
+        found=false;
+        break;
+     }
+     if(n%2!=0 && n%3!=0){break;}
+}
+if(found){cout<<c<<endl;}
+else{cout<<-1<<endl;}
+    }
+return 0;}
