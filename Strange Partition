@@ -1,0 +1,25 @@
+#include <iostream>
+#include <vector>
+#include<algorithm>
+#include<cmath>
+using namespace std;
+
+int main() {
+   int t;
+   cin>>t;
+   while(t--){
+        long long n,x;
+        cin>>n>>x;
+        vector<long long>a(n);
+        long long maxans=0;
+        long long sum=0;
+        for(int i=0;i<n;i++){
+            cin>>a[i];
+            sum+=a[i];
+            maxans+=(a[i]+x-1)/x;
+        }
+        long long minans=(sum+x-1)/x;
+        cout<<minans<<" "<<maxans<<endl;
+    }
+   return 0;
+}
