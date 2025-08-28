@@ -1,0 +1,48 @@
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        int a,b,c,d;
+        cin>>a>>b>>c>>d;
+        bool found=false;
+        if(a>=b){
+            if(a<=2*b+2){
+                found=true;
+            }
+        }
+        else{
+            if(b<=2*a+2){
+                found=true;
+            }
+        }
+        if(!found){
+          cout<<"NO"<<endl;
+          continue;}
+        else{
+            int new_a=c-a;
+            int new_b=d-b;
+         if(new_a>=new_b){
+            if(new_a<=2*(new_b)+2){
+                found=true;
+            }
+            else{
+                found=false;
+            }
+        }
+        else{
+            if(new_b<=2*(new_a)+2){
+                found=true;
+            }
+            else{
+                found=false;
+            }
+        }
+        }
+        if(found){cout<<"YES"<<endl;}
+        else{cout<<"NO"<<endl;}
+    }
+    return 0;}
