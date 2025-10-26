@@ -1,0 +1,24 @@
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+    int n,k;
+    cin>>n>>k;
+    vector<int>a(n);
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+    }
+    vector<int> rev_a = a;
+    reverse(rev_a.begin(), rev_a.end());
+    vector<int>sort_a=a;
+    sort(sort_a.begin(),sort_a.end());
+    if(k==1 && sort_a!=a)cout<<"NO"<<endl;
+    else cout<<"YES"<<endl;
+}
+    return 0;
+}
