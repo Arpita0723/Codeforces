@@ -1,0 +1,38 @@
+#include <iostream>
+#include <vector>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int t;
+    cin>>t;
+    while(t--){
+        int n;
+        cin>>n;
+        vector<int>arr(n);
+        int c=0;
+        int s=0;
+        int ans=0;
+        for(int i=0;i<n;i++){
+            cin>>arr[i];
+            s+=arr[i];
+            if(arr[i]==-1)c++;
+        }
+        if(s>=0 && c%2==0)cout<<ans<<endl;
+        else{
+            for(int i=0;i<n;i++){
+                if(arr[i]==-1){
+                    arr[i]=1;
+                    s+=2;
+                    c--;
+                    ans++;
+                }
+                if(s>=0 && c%2==0){
+                    cout<<ans<<endl;
+                    break;
+                }
+            }
+        }
+    }
+    return 0;
+}
