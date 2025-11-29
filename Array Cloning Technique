@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    long long t;
+    cin >> t;
+    while (t--) {
+        long long n;
+        cin >> n;
+        unordered_map<long long, int> freqMap;
+        int freq = 0;
+        vector<long long> a(n);
+        for (int i = 0; i < n; i++) {
+            cin >> a[i];
+            freqMap[a[i]]++;
+            freq = max(freq, freqMap[a[i]]);
+        }
+
+        if (freq == n) {
+            cout << 0 << "\n";
+            continue;
+        }
+        long long currfreq=freq;
+        int clones=0;
+        while (currfreq<n){
+            clones++;
+            currfreq*=2;
+        }
+        int swap=n-freq;
+        cout<<clones+swap<<endl;
+    }
+    return 0;
+}
